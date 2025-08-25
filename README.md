@@ -4,29 +4,6 @@
 Chinese Notice: 如果无法查看此文档中的图片,请下载次项目后在自己电脑查看此 README.md
 1、Fork this repository
 2、Please rewrite the target host name in api/proxy.js to "google.com" by default.
-```js
-const { createProxyMiddleware } = require("http-proxy-middleware");
-module.exports = (req, res) => {
-  let target = "https://www.google.com/"; //your website url
-  //   if (
-  //     req.url.startsWith("/api") ||
-  //     req.url.startsWith("/auth") ||
-  //     req.url.startsWith("/banner") ||
-  //     req.url.startsWith("/CollegeTask")
-  //   ) {
-  //     target = "http://106.15.2.32:6969";
-  //   }
-  createProxyMiddleware({
-    target,
-    changeOrigin: true,
-    pathRewrite: {
-      // rewrite request path `/backend`
-      //  /backend/user/login => http://google.com/user/login
-      //   "^/backend/": "/",
-    },
-  })(req, res);
-};
-```
 3、Registering your vercel account  
 4、To bind your GitHub account in Vercel's settings, please follow the steps below.
 5、To configure your Vercel repository, please follow the instructions below.
